@@ -80,10 +80,10 @@ BODY:
 1. 先查询NGINX upstream 'test' 下的server信息，存入 get_upstream
 2. 如果 get_upstream.length 为0 ，则批量调用 plus POST Upstream Server API 插入request body的server
 3. 如果 get_upstream.length 不为0, 则与request body 做对比：
-    ｜- server对象一样，无操作
-    ｜- server对象不一样：
-        ｜- server字段一样，调用plus PATCH Upstream Server API
-        ｜- server字段不一样，获取get_upstream server ID 先调用plus DELETE Upstream Server API, 再调用plus POST Upstream Server API插入request body server
+ - server对象一样，无操作
+ - server对象不一样：
+   - server字段一样，调用plus PATCH Upstream Server API
+   - server字段不一样，获取get_upstream server ID 先调用plus DELETE Upstream Server API, 再调用plus POST Upstream Server API插入request body server
 
 # PLUS API接口
 1. ADD Server
